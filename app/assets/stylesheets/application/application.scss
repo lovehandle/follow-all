@@ -1,4 +1,13 @@
 @import "variables";
 @import "bootstrap";
 @import "bootstrap-responsive";
-@import "screen";
+
+// Layout
+@import "style";
+@import "header";
+@import "sash";
+@import "flashes";
+@import "footer";
+
+// Pages
+@import "twitter";

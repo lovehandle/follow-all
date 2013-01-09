@@ -1,0 +1,16 @@
+@media (min-width: 980px) {
+
+  .alert {
+    @include border-top-left-radius(0);
+    @include border-top-right-radius(0);
+  }
+
+}
+
+@media (min-width: 1200px) {
+
+  .alert {
+    @include border-top-left-radius(0);
+    @include border-top-right-radius(0);
+  }
+}

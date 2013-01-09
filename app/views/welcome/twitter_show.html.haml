@@ -1,14 +1,14 @@
-.row
-  .span3
-    .well
-      %h3 Please Select a List
-      #twitter-user.control-group
-      #twitter-list.control-group
+#twitter
 
-      .actions
-        %a.btn.btn-primary Follow All
-  .span8
-    #twitter-users
+  #twitter-form
+    %h3 Please Select a List
+    #twitter-user.control-group
+    #twitter-list.control-group
+
+    #twitter-actions
+      %a.btn-follow-all Follow All
+
+  #twitter-list-users
 
 
 - content_for :javascripts do

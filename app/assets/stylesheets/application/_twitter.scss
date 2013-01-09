@@ -1,0 +1,42 @@
+#twitter {
+  @extend .row;
+}
+
+#twitter-form {
+
+  @include makeColumn(3);
+  @extend .well;
+
+  .no-results {
+    @include border-radius(6px);
+    padding: 20px;
+    min-height: 300px;
+    border: 2px dashed #DDD;
+    text-align: center;
+    color: $grayLight;
+  }
+
+  .btn-follow-all {
+    @extend .btn;
+    @extend .btn-primary;
+  }
+
+}
+
+#twitter-actions {
+
+  @extend .actions;
+  margin-top: 20px;
+
+}
+
+#twitter-list-users {
+
+  @include makeColumn(8);
+
+  .media {
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+
+}

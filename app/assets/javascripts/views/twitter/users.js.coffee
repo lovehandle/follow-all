@@ -1,6 +1,6 @@
 class FA.Views.Twitter.Users extends Backbone.View
 
-  el: "#twitter-users"
+  el: "#twitter-list-users"
 
   initialize: () ->
     @collection.bind "reset", @render, @

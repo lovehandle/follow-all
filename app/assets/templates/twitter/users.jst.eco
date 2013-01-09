@@ -1,13 +1,20 @@
 <% if @users.length > 0 : %>
-  <ul class="thumbnails">
+  <div id="users-to-follow">
+    <div class="span6">
+      <h3>Users to Follow (<%= @users.length %>)</h3>
+    </div>
     <% @users.each (user) -> : %>
-    <li>
-      <a href="<%= user.get("url") %>" class="thumbnail">
-        <img src="<%= user.imageUrl() %>" alt="<%= user.get("name") %>" title="@<%= user.get("screen_name") %> - <%= user.get("name") %>"/>
-      </a>
-    </li>
+      <div class="media span3">
+        <a class="pull-left" href="<%= user.get("url") %>"><img class="media-object" src="<%= user.imageUrl() %>" /></a>
+        <div class="media-body">
+          <h4 class="media-heading">
+            <a href="<%= user.get("url") %>">@<%= user.get("screen_name") %></a>
+          </h4>
+          <p class="muted"><%= user.get("name") %></p>
+        </div>
+      </div>
     <% end %>
-  </ul>
+  </div>
 <% else : %>
   <div class="no-results">
     <h4>People to Follow</h4>
