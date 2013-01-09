@@ -1,5 +1,7 @@
 class Twitter::UsersController < Twitter::BaseController
 
+  respond_to :json
+
   before_filter :set_user!, only: [ :lists ]
 
   def lists
