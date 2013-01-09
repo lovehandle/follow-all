@@ -1,4 +1,4 @@
-class FA.Models.Twitter.ListCriteria extends Backbone.Model
+class FA.Models.Twitter.Criteria extends Backbone.Model
 
   defaults:
     user: undefined

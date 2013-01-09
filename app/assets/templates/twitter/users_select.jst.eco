@@ -1,9 +1,0 @@
-<label id="twitter-user-label" for="twitter-user-input" class="control-label">User:</label>
-<div class="controls">
-  <select id="twitter-user-input" name="twitter[user]">
-    <option></option>
-    <% for user in @users : %>
-      <option value="<%= user %>"><%= user %></option>
-    <% end %>
-  </select>
-</div>

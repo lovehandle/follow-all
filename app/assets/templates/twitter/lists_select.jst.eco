@@ -1,9 +1,9 @@
-<label id="twitter-list-label" for="twitter-listinput" class="control-label">List:</label>
+<label id="follow-all-twitter-list-label" for="follow-all-twitter-list-input" class="control-label">List:</label>
 <div class="controls">
-  <select id="twitter-list-input" name="twitter[list]">
+  <select id="follow-all-twitter-list-input" name="twitter[list]">
     <option></option>
-    <% for list in @lists : %>
-      <option value="<%= list %>"><%= list %></option>
+    <% @lists.each (list) -> : %>
+      <option value="<%= list.get("name") %>"><%= list.get("name") %></option>
     <% end %>
   </select>
 </div>

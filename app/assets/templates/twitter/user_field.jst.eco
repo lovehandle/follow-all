@@ -1,0 +1,4 @@
+<label id="follow-all-twitter-user-label" for="follow-all-twitter-user-input" class="control-label">User:</label>
+<div class="controls">
+  <input id="follow-all-twitter-user-input" name="twitter[user]" type="text"/>
+</div>

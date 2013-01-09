@@ -14,7 +14,7 @@ class FollowsController < ApplicationController
       rescue Twitter::Error::BadRequest
         flash.now[:notice] = "You have been rate-limited by Twitter. Please try again in an hour."
       end
-      render 'sessions/show'
+      render 'twitter/show'
     else
       redirect_to failure_path
     end

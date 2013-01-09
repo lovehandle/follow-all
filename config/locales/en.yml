@@ -3,8 +3,10 @@ en:
     description: "Follow all the members of a Twitter list with a single click"
     name: "Follow All"
     org: "Code for America"
+  header:
+    select_list: "Please Select a List"
   button:
-    follow_all: "Follow all members of this list!"
+    follow_all: "Follow all"
     sign_in: "Sign in with Twitter"
   help:
     please_wait: "Note: This may take a few seconds to process."

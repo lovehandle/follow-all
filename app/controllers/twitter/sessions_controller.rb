@@ -1,12 +1,13 @@
-class SessionsController < ApplicationController
+class Twitter::SessionsController < ApplicationController
+
   def create
-    session[:access_token] = request.env['omniauth.auth']['credentials']['token']
+    session[:access_token]  = request.env['omniauth.auth']['credentials']['token']
     session[:access_secret] = request.env['omniauth.auth']['credentials']['secret']
     redirect_to show_path, notice: "Signed in"
   end
 
   def show
-    if session['access_token'] && session['access_secret']
+    if session[:access_token] && session[:access_secret] 
       @user = client.user
     else
       redirect_to failure_path
@@ -22,4 +23,5 @@ class SessionsController < ApplicationController
     reset_session
     redirect_to root_path, notice: "Signed out"
   end
+
 end
