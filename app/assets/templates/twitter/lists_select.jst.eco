@@ -1,0 +1,9 @@
+<label id="twitter-list-label" for="twitter-listinput" class="control-label">List:</label>
+<div class="controls">
+  <select id="twitter-list-input" name="twitter[list]">
+    <option></option>
+    <% for list in @lists : %>
+      <option value="<%= list %>"><%= list %></option>
+    <% end %>
+  </select>
+</div>

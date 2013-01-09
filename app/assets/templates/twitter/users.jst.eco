@@ -1,0 +1,15 @@
+<% if @users.length > 0 : %>
+  <ul class="thumbnails">
+    <% @users.each (user) -> : %>
+    <li>
+      <a href="<%= user.get("url") %>" class="thumbnail">
+        <img src="<%= user.imageUrl() %>" alt="<%= user.get("name") %>" title="@<%= user.get("screen_name") %> - <%= user.get("name") %>"/>
+      </a>
+    </li>
+    <% end %>
+  </ul>
+<% else : %>
+  <div class="no-results">
+    <h4>People to Follow</h4>
+  </div>
+<% end %>

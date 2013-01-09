@@ -1,0 +1,21 @@
+.row
+  .span3
+    .well
+      %h3 Please Select a List
+      #twitter-user.control-group
+      #twitter-list.control-group
+
+      .actions
+        %a.btn.btn-primary Follow All
+  .span8
+    #twitter-users
+
+
+- content_for :javascripts do
+  :javascript
+    jQuery(function () {
+      FA.twitter_model = new FA.Models.Twitter.UserFollower();
+      FA.twitter_view  = new FA.Views.Twitter.FollowUsers({ model: FA.twitter_model });
+
+      FA.twitter_view.render();
+    });

@@ -1,9 +1,10 @@
 source 'https://rubygems.org'
 ruby '2.0.0'
 
-gem 'rails',          '~> 3.2'
-gem 'bootstrap-sass', '~> 2.2.2.0'
-gem 'haml',           '~> 3.2.0.beta'
+gem 'rails',             '~> 3.2'
+gem 'backbone-on-rails', '~> 0.9.9.0'
+gem 'bootstrap-sass',    '~> 2.2.2.0'
+gem 'haml',              '~> 3.2.0.beta'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'twitter'

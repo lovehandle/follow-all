@@ -1,0 +1,13 @@
+lists:
+  -
+    user_screen_name: codeforamerica
+    name: fellows-2011
+  -
+    user_screen_name: codeforamerica
+    name: fellows-2012
+  -
+    user_screen_name: codeforamerica
+    name: fellows-2013
+  -
+    user_screen_name: codeforamerica
+    name: staff
