@@ -6,7 +6,7 @@ class FA.Views.Twitter.ListsSelect extends Backbone.View
     "change #follow-all-twitter-list-input" : "onListChange"
 
   initialize: () ->
-    @collection.bind "reset", @render, @
+    @collection.on "reset", @render, @
 
   render: () ->
     @$el.html JST["twitter/lists_select"] { lists: @collection }
