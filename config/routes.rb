@@ -2,14 +2,10 @@ FollowAll::Application.routes.draw do
   root to: 'welcome#index'
 
   namespace :twitter do
-    match "lists",       to: "lists#index",  as: "twitter_lists"
-    match "user/lists",  to: "users#lists",  as: "twitter_user_lists"
-    match "list/follow", to: "lists#follow", as: "twitter_list_follow"
-    match "list/users",  to: "lists#users",  as: "twitter_list_users"
+    get  "user/lists",       to: "users#lists",      as: "twitter_user_lists"
+    post "users/follow_all", to: "users#follow_all", as: "twitter_list_follow_all"
+    get  "list/users",       to: "lists#users",      as: "twitter_list_users"
   end
-
-  #TODO: DELETE ME
-  get "twitter_show", to: "welcome#twitter_show"
 
   get '/auth/twitter/callback', to: 'twitter/sessions#create', as: 'callback'
   get '/auth/failure', to: 'twitter/sessions#error', as: 'failure'

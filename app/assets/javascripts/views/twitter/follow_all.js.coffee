@@ -2,6 +2,9 @@ class FA.Views.Twitter.FollowAll extends Backbone.View
 
   el: "#follow-all-twitter"
 
+  events:
+    "click #follow-all-btn" : "onSubmit"
+
   initialize: () ->
     @userField   = new FA.Views.Twitter.UserField   { model: @model.criteria }
     @listsSelect = new FA.Views.Twitter.ListsSelect { model: @model.criteria, collection: @model.lists }
@@ -11,3 +14,7 @@ class FA.Views.Twitter.FollowAll extends Backbone.View
     @userField.render()
     @listsSelect.render()
     @usersIndex.render()
+
+  onSubmit: () ->
+    @model.followUsers()
+
