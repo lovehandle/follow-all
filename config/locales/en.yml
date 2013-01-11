@@ -11,7 +11,6 @@ en:
   help:
     please_wait: "Note: This may take a few seconds to process."
     sign_in: "Start by pressing this button to authenticate with Twitter."
-    rate_limit: "You have been rate-limited by Twitter. Please try again in an hour."
   nav:
     build_status: "Build Status"
     dependency_status: "Dependency Status"
