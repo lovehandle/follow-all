@@ -1,46 +1,38 @@
 class Twitter::UsersController < Twitter::BaseController
 
+  before_filter :set_lists!, only: [ :lists ]
+  before_filter :set_users!, only: [ :follow_users ]
+
   respond_to :json
 
-  before_filter :set_user!, only: [ :lists ]
-
   def lists
-    begin
-      @lists = Twitter.lists(@user) || []
-    rescue Twitter::Error::NotFound
-      @lists = []
-    end
-
     respond_with @lists
   end
 
-  def follow_all
-    @users = params.fetch(:users, {}).values
-
+  def follow_users
     begin
-      @user        = FollowAll::Twitter::User.new(client)
-      @new_friends = @user.follow_users(@users)
-
+      @new_friends = TwitterUser.follow_users(client, @users)
+     
       respond_to do |format|
-        if @new_friends.size.zero?
-          format.json { render json: { notice: "You are alread following", success: true } }
-        elsif @new_friends.size == 1
-          format.json { render json: { notice: "You are now following 1 new person", success: true } }
-        else
-          format.json { render json: { notice: "You are now following #{ @new_friends.size } new people", success: true } }
-        end
+        format.json { render json: notice, success: true }
       end
+
     rescue Twitter::Error::BadRequest
+      error = "You have been rate limited by Twitter. Please try again in an hour."
       respond_to do |format|
-        format.json { render json: { error: "You have been rate limited by Twitter. Please try again in an hour." }, status: 422 }
+        format.json { render json: { error: error }, status: 422 }
       end
     end
   end
 
   protected
 
-  def set_user!
-    @user = params.fetch(:user, "").tr("@", "")
+  def set_lists!
+    @lists = TwitterUser.lists(client, params.fetch(:user, "").tr("@",""))
+  end
+
+  def set_users!
+    @users = params.fetch(:users, [])
   end
 
 end

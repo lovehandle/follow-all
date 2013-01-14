@@ -5,7 +5,7 @@
     </div>
     <% @users.each (user) -> : %>
       <div class="media span3">
-        <a class="pull-left" href="<%= user.url() %>" target="_blank"><img class="media-object" src="<%= user.imageUrl() %>" /></a>
+        <a class="thumbnail pull-left" href="<%= user.url() %>" target="_blank"><img class="media-object" src="<%= user.imageUrl() %>" /></a>
         <div class="media-body">
           <h4 class="media-heading">
             <a href="<%= user.url() %>" target="_blank">@<%= user.get("screen_name") %></a>
